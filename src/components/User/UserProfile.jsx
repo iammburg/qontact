@@ -19,7 +19,7 @@ export default function UserProfile() {
         if (response.status === 200) {
             setName(responseBody.data.name);
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 
@@ -33,7 +33,7 @@ export default function UserProfile() {
         if (response.status === 200) {
             await alertSuccess('Profile updated successfully!');
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 
@@ -54,7 +54,7 @@ export default function UserProfile() {
             setConfirmPassword('');
             await alertSuccess('Password updated successfully!');
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 

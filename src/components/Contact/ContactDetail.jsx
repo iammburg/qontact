@@ -21,7 +21,7 @@ export default function ContactDetail() {
         if (response.status === 200) {
             setContact(responseBody.data);
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 
@@ -33,7 +33,7 @@ export default function ContactDetail() {
         if (response.status === 200) {
             setAddresses(responseBody.data);
         } else {
-            alertError(responseBody.errors);
+            alertError('Response invalid, please try again.');
         }
     }
 
@@ -50,7 +50,7 @@ export default function ContactDetail() {
             await alertSuccess('Address deleted successfully!');
             await fetchAddresses();
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 

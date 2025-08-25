@@ -26,7 +26,7 @@ export default function AddressCreate() {
         if (response.status === 200) {
             setContact(responseBody.data);
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 
@@ -43,7 +43,7 @@ export default function AddressCreate() {
                 pathname: `/dashboard/contacts/${id}`
             });
         } else {
-            alertError(responseBody.errors);
+            alertError('Response invalid, please try again.');
         }
     }
 

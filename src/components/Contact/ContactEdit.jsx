@@ -25,7 +25,7 @@ export default function ContactEdit() {
             setEmail(responseBody.data.email);
             setPhone(responseBody.data.phone);
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 
@@ -39,7 +39,7 @@ export default function ContactEdit() {
         if (response.status === 200) {
             alertSuccess('Contact updated successfully');
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 

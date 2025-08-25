@@ -25,7 +25,7 @@ export default function AddressEdit() {
         if (response.status === 200) {
             setContact(responseBody.data);
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 
@@ -41,7 +41,7 @@ export default function AddressEdit() {
             setCountry(responseBody.data.country);
             setPostalCode(responseBody.data.postal_code);
         } else {
-            await alertError(responseBody.errors);
+            await alertError('Response invalid, please try again.');
         }
     }
 
@@ -55,7 +55,7 @@ export default function AddressEdit() {
         if (response.status === 200) {
             await alertSuccess('Address updated successfully!');
         } else {
-            alertError(responseBody.errors);
+            alertError('Response invalid, please try again.');
         }
     }
 
