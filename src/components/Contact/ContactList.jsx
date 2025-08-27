@@ -43,7 +43,7 @@ export default function ContactList() {
             setContacts(responseBody.data);
             setTotalPage(responseBody.paging.total_page);
         } else {
-            await alertError('Response invalid, please try again.');
+            await alertError(responseBody.errors);
         }
     }
 
@@ -60,7 +60,7 @@ export default function ContactList() {
             await alertSuccess("Contact deleted successfully!");
             setReload(!reload);
         } else {
-            await alertError('Response invalid, please try again.');
+            await alertError(responseBody.errors);
         }
     }
 

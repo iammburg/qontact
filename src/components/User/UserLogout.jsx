@@ -19,7 +19,7 @@ export default function UserLogout() {
                 pathname: '/login',
             });
         } else {
-            await alertError('Response invalid, please try again.');
+            await alertError(responseBody.errors);
         }
     }
 

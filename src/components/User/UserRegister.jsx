@@ -34,7 +34,7 @@ export default function UserRegister() {
                 pathname: '/login',
             });
         } else {
-            await alertError('Response invalid, please try again.');
+            await alertError(responseBody.errors);
         }
     }
 

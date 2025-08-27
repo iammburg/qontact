@@ -28,7 +28,7 @@ export default function UserLogin() {
                 pathname: '/dashboard/contacts',
             });
         } else {
-            await alertError('Response invalid, please try again.');
+            await alertError(responseBody.errors);
         }
     }
 
